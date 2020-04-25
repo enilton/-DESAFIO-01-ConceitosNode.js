@@ -66,7 +66,7 @@ app.post("/repositories/:id/like",  isValidUuid, existsRepo, (request, response)
   let repo = repositories[request.repoIndex];
   repo.likes = repo.likes + 1;  
   repositories[request.repoIndex] = repo;
-  return response.json(repo);  
+  return response.status(200).json(repo);  
 });
 
 module.exports = app;
